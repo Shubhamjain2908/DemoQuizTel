@@ -1,10 +1,13 @@
- example-form {
+.wrapperOption {
+  width: 100%;
+}
+example-form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
   }
    
-   .example-full-width {
+    .example-full-width {
     width: 50%;
   } 
   .button-row {
@@ -15,8 +18,13 @@
   .example-container {
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
   
   .example-container > * {
     width: 100%;
+  }
+  textarea {
+    text-align: center;
+    overflow: hidden !important;
   }

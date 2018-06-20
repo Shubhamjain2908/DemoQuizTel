@@ -13,6 +13,8 @@ import { ErrorComponent } from './error/error.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
+import { HttpClientModule } from '@angular/common/http';
+import { QuizService } from './service/quiz.service';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,14 @@ import { MaterialModule } from './material.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     LayoutModule,
     MaterialModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [QuizService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

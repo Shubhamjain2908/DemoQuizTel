@@ -1,29 +1,39 @@
-<form class="example-form">
+<div class="wrapper">
+  <form class="example-form">
   <div class="example-container">
-    <mat-radio-group>
-      <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Questions"></textarea>
-      </mat-form-field>
-      <mat-radio-button value="1">Option 1</mat-radio-button>
-      <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Option A"></textarea>
-      </mat-form-field>
-      <mat-radio-button value="2">Option 2</mat-radio-button>
-      <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Option B"></textarea>
-      </mat-form-field>
-      <mat-radio-button value="3">Option 3</mat-radio-button>
-      <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Option C"></textarea>
-      </mat-form-field>
-      <mat-radio-button value="4">Option 4</mat-radio-button>
-      <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Option D"></textarea>
-      </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea matInput readonly placeholder="Questions">{{qb['question']}}</textarea>
+    </mat-form-field>
+    <mat-radio-group (change)="radioChange($event)">
+      <div class="wrapperOption">
+        <mat-radio-button value="1">A</mat-radio-button>
+        <mat-form-field class="example-full-width">
+          <textarea matInput readonly placeholder="Option A">{{Questions[index].email}}</textarea>
+        </mat-form-field>    
+      </div>
+      <div class="wrapperOption">
+        <mat-radio-button value="2">B</mat-radio-button>
+        <mat-form-field class="example-full-width">
+          <textarea matInput readonly placeholder="Option B">{{Questions[index].id}}</textarea>
+        </mat-form-field>
+      </div>
+      <div class="wrapperOption">
+        <mat-radio-button value="3">C</mat-radio-button>
+        <mat-form-field class="example-full-width">
+          <textarea matInput readonly placeholder="Option C">{{Questions[index].name}}</textarea>
+        </mat-form-field>
+      </div>
+      <div class="wrapperOption">
+        <mat-radio-button value="4">D</mat-radio-button>
+        <mat-form-field class="example-full-width">
+          <textarea matInput readonly placeholder="Option D">{{Questions[index].postId}}</textarea>
+        </mat-form-field>
+      </div>
     </mat-radio-group>
   </div>
   <div class="button-row">
-    <button mat-raised-button color="accent">Previous</button>
-    <button mat-raised-button color="primary">Next</button>
+    <button mat-raised-button color="accent" (click)="previousQuestion()">Previous</button>
+    <button mat-raised-button color="primary" (click)="nextQuestion()">Next</button>
   </div>
 </form>
+</div>
